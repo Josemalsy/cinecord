@@ -14,7 +14,7 @@
                         </div>
                     @endif
 
-                    {{ __('Portada de Inicio') }}
+                    {{ __('Portada de Inicio cambiada por Josema') }}
                 </div>
             </div>
         </div>
