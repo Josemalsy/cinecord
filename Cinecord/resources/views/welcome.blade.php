@@ -14,7 +14,7 @@
                         </div>
                     @endif
 
-                    {{ __('Página de Inicio') }}
+                    {{ __('Portada de Inicio') }}
                 </div>
             </div>
         </div>
