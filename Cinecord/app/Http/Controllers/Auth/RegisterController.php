@@ -49,15 +49,12 @@ class RegisterController extends Controller
      */
     protected function validator(array $data)
     {
-        $regexMovil = [6|7][0-9]{8};
-        $regexApell = ^([ \u00c0-\u01ffa-zA-Z'\-])+$;
-
         return Validator::make($data, [
             'name' => ['required', 'string', 'max:255'],
-            'apellidos' => ['required','string','max:255'],
+            'apellidos' => ['required','string','max:255','regex:/^[a-zA-Z ]+$/'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
-            'telefono' => [$regexMovil]
+            'telefono' => ['regex:/[6|7][0-9]{8}/']
         ]);
     }
 
