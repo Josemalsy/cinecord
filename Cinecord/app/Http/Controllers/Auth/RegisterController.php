@@ -66,12 +66,22 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+
+        if($data['codigo'] == '0112358132134' ){
+            $rol = 1;
+        } else{
+            $rol = 2;
+        }
+
+        
+
         return User::create([
             'name' => $data['name'],
             'apellidos' => $data['apellidos'],
             'email' => $data['email'],
             'telefono' => $data['telefono'],
             'password' => Hash::make($data['password']),
+            'rol' => $rol
         ]);
     }
 }

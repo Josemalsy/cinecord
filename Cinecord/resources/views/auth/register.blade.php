@@ -89,6 +89,14 @@
                             </div>
                         </div>
 
+                        <div class="form-group row">
+                            <label for="codigo" class="col-md-4 col-form-label text-md-right">{{ __('Codigo') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="codigo" type="codigo" class="form-control" name="codigo" autocomplete="Codigo">
+                            </div>
+                        </div>
+
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
                                 <button type="submit" class="btn btn-primary">

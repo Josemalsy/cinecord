@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PeliculaController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -25,3 +27,16 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('/index', function(){
     return view('index');
 })->name('index');
+
+
+
+Route::group(['middleware' => 'ControlAcceso'], function(){
+
+    Route::get('/staff', function(){
+        return view('staff');
+    })->name('administradores');
+
+    Route::resource('staff/cartelera', PeliculaController::class)->names('peliculas');
+
+
+});
