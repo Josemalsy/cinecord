@@ -42,6 +42,7 @@
         </div>
 
         Generos de la pelicula (elegir uno o más)
+        
         @include('cartelera.generos')
 
         <div class="form-group">
