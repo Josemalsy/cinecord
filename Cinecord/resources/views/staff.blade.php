@@ -2,6 +2,6 @@
 
 @section('content')
 
-{{auth()->user()->rol}}
+{{auth()->user()->name}}
 
 @endsection
