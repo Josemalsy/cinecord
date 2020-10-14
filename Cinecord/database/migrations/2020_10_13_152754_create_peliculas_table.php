@@ -22,7 +22,8 @@ class CreatePeliculasTable extends Migration
             $table->text('reparto');
 	        $table->text('sinopsis');
 	        $table->string('clasificacion');
-	        $table->string('estado');
+            $table->string('estado');
+            $table->timestamps();
         });
     }
 
