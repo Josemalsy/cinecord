@@ -36,23 +36,31 @@ class PeliculaController extends Controller
      */
     public function store(Request $request)
     {
+
+        var_dump($request->get('genero'));
+        
         $request->validate([
             'titulo' => ['required','max:255'],
             'director' => ['required','max:255'],
             'duracion' => ['required','numeric'],
-            'genero' =>  ['required','max:255'],
+            'genero' =>  ['required'],
             'reparto' => 'required',
             'sinopsis' => 'required',
             'clasificacion' => 'required',
             'estado' => 'required'
         ]);
 
+
+            $genero = implode(",",$request->get('genero'));
+
+
+
         $pelicula = new Pelicula([
 
             'titulo' => $request->get('titulo'),
             'director' => $request->get('director'),
             'duracion' => $request->get('duracion'),
-            'genero' =>  $request->get('genero'),
+            'genero' =>  $genero,
             'reparto' => $request->get('reparto'),
             'sinopsis' => $request->get('sinopsis'),
             'clasificacion' => $request->get('clasificacion'),

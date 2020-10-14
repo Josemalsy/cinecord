@@ -41,15 +41,8 @@
             </label>
         </div>
 
-        <div class="form-group">
-
-            <label for="genero">
-                Genero de la pelicula <br>
-
-                <input type="text" class="form-control shadow-sm" id="genero" name="genero" value="{{ old('genero') }}">
-
-            </label>
-        </div>
+        Generos de la pelicula (elegir uno o más)
+        @include('cartelera.generos')
 
         <div class="form-group">
 
@@ -99,6 +92,7 @@
             </label>
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
+
 
     </div>
 
