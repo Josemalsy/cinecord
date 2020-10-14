@@ -35,8 +35,10 @@ Route::group(['middleware' => 'ControlAcceso'], function(){
     Route::get('/staff', function(){
         return view('staff');
     })->name('administradores');
-
+    Route::get('staff/cartelera/asignarPelicula',[PeliculaController::class,'asignarPelicula'])->name('peliculas.asignarPeliculaSala');
     Route::resource('staff/cartelera', PeliculaController::class)->names('peliculas');
+
+    
 
 
 });

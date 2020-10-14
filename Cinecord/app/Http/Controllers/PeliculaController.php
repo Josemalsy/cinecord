@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Pelicula;
 
+
 class PeliculaController extends Controller
 {
     /**
@@ -27,6 +28,21 @@ class PeliculaController extends Controller
         return view('cartelera.subirPeliculaForm');
     
         }
+
+        public function asignarPelicula(){
+
+            $peliculas = Pelicula::all();
+
+            
+
+            return view('cartelera.asignarPeliculaSala')->with('peliculas',$peliculas);
+      
+      
+      
+      
+      
+      
+          }
 
         /**
      * Store a newly created resource in storage.
@@ -65,6 +81,9 @@ class PeliculaController extends Controller
         return redirect('/');
 
     }
+
+
+    
 
     /**
      * Display the specified resource.
