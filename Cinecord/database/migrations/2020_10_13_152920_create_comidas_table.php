@@ -17,7 +17,8 @@ class CreateComidasTable extends Migration
             $table->id();
             $table->string('nombre');
             $table->text('descripcion');
-	        $table->float('precio', 8, 2);
+            $table->float('precio', 8, 2);
+            $table->timestamps();
         });
     }
 

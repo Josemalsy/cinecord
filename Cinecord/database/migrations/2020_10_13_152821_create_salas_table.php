@@ -16,7 +16,8 @@ class CreateSalasTable extends Migration
         Schema::create('salas', function (Blueprint $table) {
             $table->id();
             $table->integer('aforo');
-	        $table->string('tipo_sala');   
+            $table->string('tipo_sala');   
+            $table->timestamps();
         });
     }
 

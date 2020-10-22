@@ -17,7 +17,8 @@ class CreateButacasTable extends Migration
             $table->integer('fila');
 	        $table->integer('butaca');
             $table->integer('sala_id');
-	        $table->string('estado_butaca');
+            $table->string('estado_butaca');
+            $table->timestamps();
         });
     }
 

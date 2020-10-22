@@ -17,6 +17,7 @@ class CreateTarjetasTable extends Migration
             $table->id();
             $table->integer('user_id');
             $table->integer('puntos');
+            $table->string('nombre');
             $table->timestamps();
         });
     }

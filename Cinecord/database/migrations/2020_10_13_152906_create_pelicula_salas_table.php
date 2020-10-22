@@ -17,7 +17,8 @@ class CreatePeliculaSalasTable extends Migration
             $table->integer('pelicula_id');
 	        $table->integer('sala_id');
             $table->date('fecha');	    
-	        $table->time('hora');
+            $table->time('hora');
+            $table->timestamps();
         });
     }
 

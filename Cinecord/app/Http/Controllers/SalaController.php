@@ -2,12 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\Pelicula;
 use App\Models\Sala;
 
-
-class PeliculaController extends Controller
+class SalaController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,7 +15,25 @@ class PeliculaController extends Controller
      */
     public function index()
     {
-        //
+        // $sala = Sala::get()->where('id',1)->first();
+
+        // $columnas_Filas = $sala->aforo/2;
+
+        // $filas = $sala->aforo/2;
+        // $columnas = $sala->aforo/2;
+
+
+        // $pasillo = 3;
+
+        
+        
+        
+
+        
+
+       
+
+        //  return view('sala.verSala')->with('salas',$sala)->with('pasillo',$pasillo)->with('filas',$filas)->with('columnas',$columnas);
     }
 
     /**
@@ -24,29 +41,12 @@ class PeliculaController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create(){
-    
-        return view('cartelera.subirPeliculaForm');
-    
-        }
+    public function create()
+    {
+        return view('sala.crearSala');
+    }
 
-        public function asignarPelicula(){
-
-            $peliculas = Pelicula::all();
-            $salas = Sala::all();
-
-            
-
-            return view('cartelera.asignarPeliculaSala')->with('peliculas',$peliculas)->with('salas',$salas);
-      
-      
-      
-      
-      
-      
-          }
-
-        /**
+    /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
@@ -54,45 +54,29 @@ class PeliculaController extends Controller
      */
     public function store(Request $request)
     {
+      
+       $request->validate([
+        'aforo' => ['required','numeric'],
+        'tipoSala' => ['required'],
+        
+    ]);
 
-           
-        $request->validate([
-            'titulo' => ['required','max:255'],
-            'director' => ['required','max:255'],
-            'duracion' => ['required','numeric'],
-            'genero' =>  ['required'],
-            'reparto' => 'required',
-            'sinopsis' => 'required',
-            'clasificacion' => 'required',
-            'estado' => 'required'
-        ]);
+        $sala = new Sala([
 
-
-            $genero = implode(",",$request->get('genero'));
+            'aforo'=> $request->get('aforo'),
+            'tipo_sala'=>$request->get('tipoSala')
 
 
 
-        $pelicula = new Pelicula([
-
-            'titulo' => $request->get('titulo'),
-            'director' => $request->get('director'),
-            'duracion' => $request->get('duracion'),
-            'genero' =>  $genero,
-            'reparto' => $request->get('reparto'),
-            'sinopsis' => $request->get('sinopsis'),
-            'clasificacion' => $request->get('clasificacion'),
-            'estado' => $request->get('estado')
 
         ]);
 
-        $pelicula->save();
-
+        $sala->save();
         return redirect('/');
 
+
+
     }
-
-
-    
 
     /**
      * Display the specified resource.
