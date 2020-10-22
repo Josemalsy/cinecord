@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use App\Models\User;
+use App\Models\Tarjeta;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
@@ -67,13 +68,11 @@ class RegisterController extends Controller
     protected function create(array $data)
     {
 
-        if($data['codigo'] == '0112358132134' ){
+        if($data['codigo'] == '0x1W1@2|3º58_13|21/34' ){
             $rol = 1;
         } else{
             $rol = 2;
         }
-
-        
 
         return User::create([
             'name' => $data['name'],
@@ -83,5 +82,6 @@ class RegisterController extends Controller
             'password' => Hash::make($data['password']),
             'rol' => $rol
         ]);
+        
     }
 }

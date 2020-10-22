@@ -38,11 +38,18 @@ Route::group(['middleware' => 'ControlAcceso'], function(){
         return view('staff');
     })->name('administradores');
     Route::get('staff/cartelera/asignarPelicula',[PeliculaController::class,'asignarPelicula'])->name('peliculas.asignarPeliculaSala');
+
+    Route::get('/staff/cartelera/xml_form',function(){
+        return view("cartelera.subidaXML");
+    })->name('fileXML');
+
     Route::resource('staff/cartelera', PeliculaController::class)->names('peliculas');
     Route::resource('staff/sala', SalaController::class)->names('salas');
 
     
 
+
+    Route::post('/staff/cartelera/subida_masiva',[PeliculaController::class,'Estore'])->name('salvar');
 
     
 
