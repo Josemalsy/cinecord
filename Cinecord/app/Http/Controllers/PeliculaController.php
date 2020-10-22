@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Pelicula;
+use App\Models\Sala;
 
 
 class PeliculaController extends Controller
@@ -32,8 +33,10 @@ class PeliculaController extends Controller
         public function asignarPelicula(){
 
             $peliculas = Pelicula::all();
+
+
             
-            return view('cartelera.asignarPeliculaSala')->with('peliculas',$peliculas);
+
       
           }
 
@@ -46,8 +49,7 @@ class PeliculaController extends Controller
     public function store(Request $request)
     {
 
-        var_dump($request->get('genero'));
-        
+           
         $request->validate([
             'titulo' => ['required','max:255'],
             'director' => ['required','max:255'],

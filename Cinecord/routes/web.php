@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PeliculaController;
+use App\Http\Controllers\SalaController;
+
 
 
 /*
@@ -42,6 +44,10 @@ Route::group(['middleware' => 'ControlAcceso'], function(){
     })->name('fileXML');
 
     Route::resource('staff/cartelera', PeliculaController::class)->names('peliculas');
+    Route::resource('staff/sala', SalaController::class)->names('salas');
+
+    
+
 
     Route::post('/staff/cartelera/subida_masiva',[PeliculaController::class,'Estore'])->name('salvar');
 

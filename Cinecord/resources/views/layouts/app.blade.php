@@ -22,7 +22,7 @@
 <body>
     <div id="app">
         
-        <hr>
+       
         <nav class="navbar navbar-expand-md navbar-dark bg-dark shadow-sm">
             <div class="container">
                  {{-- Menu --}}

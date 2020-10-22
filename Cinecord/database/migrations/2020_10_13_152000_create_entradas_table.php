@@ -15,14 +15,11 @@ class CreateEntradasTable extends Migration
     {
         Schema::create('entradas', function (Blueprint $table) {
             $table->id();
-            $table->string('titulo');
-            $table->date('fecha');
-            $table->time('hora');
-	        $table->integer('sala_id');
             $table->text('codigo_qr');
-	        $table->integer('fila');
-	        $table->integer('butaca');
-	        $table->float('precio', 8, 2);
+            $table->float('precio', 8, 2);
+            $table->integer('pelicula_id');
+            $table->integer('user_id');
+            $table->timestamps();
         });
     }
 
