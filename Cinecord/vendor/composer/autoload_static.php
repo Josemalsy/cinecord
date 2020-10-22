@@ -36,7 +36,10 @@ class ComposerStaticInitf7d747b2d7e9da17bd94dc46e384858e
         '6124b4c8570aa390c21fafd04a26c69f' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/deep_copy.php',
         'b6ec61354e97f32c0ae683041c78392a' => __DIR__ . '/..' . '/scrivo/highlight.php/HighlightUtilities/functions.php',
         'b6b991a57620e2fb6b2f66f03fe9ddc2' => __DIR__ . '/..' . '/symfony/string/Resources/functions.php',
+        'fe62ba7e10580d903cc46d808b5961a4' => __DIR__ . '/..' . '/tightenco/collect/src/Collect/Support/helpers.php',
+        'caf31cc6ec7cf2241cb6f12c226c3846' => __DIR__ . '/..' . '/tightenco/collect/src/Collect/Support/alias.php',
         'ed962a97bd972bc82007176b647d4e36' => __DIR__ . '/..' . '/facade/ignition/src/helpers.php',
+        '136e53dbd9e10cf4f87df4067d0ef0d2' => __DIR__ . '/..' . '/laravie/parser/src/helpers.php',
     );
 
     public static $prefixLengthsPsr4 = array (
@@ -60,6 +63,7 @@ class ComposerStaticInitf7d747b2d7e9da17bd94dc46e384858e
         'T' => 
         array (
             'TijsVerkoyen\\CssToInlineStyles\\' => 31,
+            'Tightenco\\Collect\\' => 18,
             'Tests\\' => 6,
         ),
         'S' => 
@@ -96,6 +100,7 @@ class ComposerStaticInitf7d747b2d7e9da17bd94dc46e384858e
         array (
             'Ramsey\\Uuid\\' => 12,
             'Ramsey\\Collection\\' => 18,
+            'Ralego\\Parser\\' => 14,
         ),
         'P' => 
         array (
@@ -127,6 +132,7 @@ class ComposerStaticInitf7d747b2d7e9da17bd94dc46e384858e
             'League\\MimeTypeDetection\\' => 25,
             'League\\Flysystem\\' => 17,
             'League\\CommonMark\\' => 18,
+            'Laravie\\Parser\\' => 15,
             'Laravel\\Ui\\' => 11,
             'Laravel\\Tinker\\' => 15,
         ),
@@ -208,6 +214,10 @@ class ComposerStaticInitf7d747b2d7e9da17bd94dc46e384858e
         'TijsVerkoyen\\CssToInlineStyles\\' => 
         array (
             0 => __DIR__ . '/..' . '/tijsverkoyen/css-to-inline-styles/src',
+        ),
+        'Tightenco\\Collect\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/tightenco/collect/src/Collect',
         ),
         'Tests\\' => 
         array (
@@ -329,6 +339,10 @@ class ComposerStaticInitf7d747b2d7e9da17bd94dc46e384858e
         array (
             0 => __DIR__ . '/..' . '/ramsey/collection/src',
         ),
+        'Ralego\\Parser\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/ralego/laravel-xml-parser/src',
+        ),
         'Psy\\' => 
         array (
             0 => __DIR__ . '/..' . '/psy/psysh/src',
@@ -392,6 +406,10 @@ class ComposerStaticInitf7d747b2d7e9da17bd94dc46e384858e
         'League\\CommonMark\\' => 
         array (
             0 => __DIR__ . '/..' . '/league/commonmark/src',
+        ),
+        'Laravie\\Parser\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/laravie/parser/src',
         ),
         'Laravel\\Ui\\' => 
         array (
@@ -540,8 +558,10 @@ class ComposerStaticInitf7d747b2d7e9da17bd94dc46e384858e
         'App\\Http\\Controllers\\Auth\\VerificationController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/VerificationController.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
         'App\\Http\\Controllers\\HomeController' => __DIR__ . '/../..' . '/app/Http/Controllers/HomeController.php',
+        'App\\Http\\Controllers\\PeliculaController' => __DIR__ . '/../..' . '/app/Http/Controllers/PeliculaController.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
         'App\\Http\\Middleware\\Authenticate' => __DIR__ . '/../..' . '/app/Http/Middleware/Authenticate.php',
+        'App\\Http\\Middleware\\ControlAcceso' => __DIR__ . '/../..' . '/app/Http/Middleware/ControlAcceso.php',
         'App\\Http\\Middleware\\EncryptCookies' => __DIR__ . '/../..' . '/app/Http/Middleware/EncryptCookies.php',
         'App\\Http\\Middleware\\PreventRequestsDuringMaintenance' => __DIR__ . '/../..' . '/app/Http/Middleware/PreventRequestsDuringMaintenance.php',
         'App\\Http\\Middleware\\RedirectIfAuthenticated' => __DIR__ . '/../..' . '/app/Http/Middleware/RedirectIfAuthenticated.php',
@@ -549,16 +569,16 @@ class ComposerStaticInitf7d747b2d7e9da17bd94dc46e384858e
         'App\\Http\\Middleware\\TrustHosts' => __DIR__ . '/../..' . '/app/Http/Middleware/TrustHosts.php',
         'App\\Http\\Middleware\\TrustProxies' => __DIR__ . '/../..' . '/app/Http/Middleware/TrustProxies.php',
         'App\\Http\\Middleware\\VerifyCsrfToken' => __DIR__ . '/../..' . '/app/Http/Middleware/VerifyCsrfToken.php',
+        'App\\Models\\Butaca' => __DIR__ . '/../..' . '/app/Models/Butaca.php',
+        'App\\Models\\Comida' => __DIR__ . '/../..' . '/app/Models/Comida.php',
+        'App\\Models\\Entrada' => __DIR__ . '/../..' . '/app/Models/Entrada.php',
+        'App\\Models\\Pelicula' => __DIR__ . '/../..' . '/app/Models/Pelicula.php',
+        'App\\Models\\Pelicula_reseña' => __DIR__ . '/../..' . '/app/Models/Pelicula_reseña.php',
+        'App\\Models\\Pelicula_sala' => __DIR__ . '/../..' . '/app/Models/Pelicula_sala.php',
+        'App\\Models\\Reseña' => __DIR__ . '/../..' . '/app/Models/Reseña.php',
+        'App\\Models\\Sala' => __DIR__ . '/../..' . '/app/Models/Sala.php',
+        'App\\Models\\Tarjeta' => __DIR__ . '/../..' . '/app/Models/Tarjeta.php',
         'App\\Models\\User' => __DIR__ . '/../..' . '/app/Models/User.php',
-        'App\\Models\\butaca' => __DIR__ . '/../..' . '/app/Models/butaca.php',
-        'App\\Models\\comida' => __DIR__ . '/../..' . '/app/Models/comida.php',
-        'App\\Models\\entrada' => __DIR__ . '/../..' . '/app/Models/entrada.php',
-        'App\\Models\\pelicula' => __DIR__ . '/../..' . '/app/Models/pelicula.php',
-        'App\\Models\\pelicula_reseña' => __DIR__ . '/../..' . '/app/Models/pelicula_reseña.php',
-        'App\\Models\\pelicula_sala' => __DIR__ . '/../..' . '/app/Models/pelicula_sala.php',
-        'App\\Models\\reseña' => __DIR__ . '/../..' . '/app/Models/reseña.php',
-        'App\\Models\\sala' => __DIR__ . '/../..' . '/app/Models/sala.php',
-        'App\\Models\\tarjeta' => __DIR__ . '/../..' . '/app/Models/tarjeta.php',
         'App\\Providers\\AppServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AppServiceProvider.php',
         'App\\Providers\\AuthServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AuthServiceProvider.php',
         'App\\Providers\\BroadcastServiceProvider' => __DIR__ . '/../..' . '/app/Providers/BroadcastServiceProvider.php',
@@ -945,6 +965,7 @@ class ComposerStaticInitf7d747b2d7e9da17bd94dc46e384858e
         'Facade\\Ignition\\SolutionProviders\\MissingAppKeySolutionProvider' => __DIR__ . '/..' . '/facade/ignition/src/SolutionProviders/MissingAppKeySolutionProvider.php',
         'Facade\\Ignition\\SolutionProviders\\MissingColumnSolutionProvider' => __DIR__ . '/..' . '/facade/ignition/src/SolutionProviders/MissingColumnSolutionProvider.php',
         'Facade\\Ignition\\SolutionProviders\\MissingImportSolutionProvider' => __DIR__ . '/..' . '/facade/ignition/src/SolutionProviders/MissingImportSolutionProvider.php',
+        'Facade\\Ignition\\SolutionProviders\\MissingLivewireComponentSolutionProvider' => __DIR__ . '/..' . '/facade/ignition/src/SolutionProviders/MissingLivewireComponentSolutionProvider.php',
         'Facade\\Ignition\\SolutionProviders\\MissingMixManifestSolutionProvider' => __DIR__ . '/..' . '/facade/ignition/src/SolutionProviders/MissingMixManifestSolutionProvider.php',
         'Facade\\Ignition\\SolutionProviders\\MissingPackageSolutionProvider' => __DIR__ . '/..' . '/facade/ignition/src/SolutionProviders/MissingPackageSolutionProvider.php',
         'Facade\\Ignition\\SolutionProviders\\RouteNotDefinedSolutionProvider' => __DIR__ . '/..' . '/facade/ignition/src/SolutionProviders/RouteNotDefinedSolutionProvider.php',
@@ -956,6 +977,7 @@ class ComposerStaticInitf7d747b2d7e9da17bd94dc46e384858e
         'Facade\\Ignition\\SolutionProviders\\UnknownValidationSolutionProvider' => __DIR__ . '/..' . '/facade/ignition/src/SolutionProviders/UnknownValidationSolutionProvider.php',
         'Facade\\Ignition\\SolutionProviders\\ViewNotFoundSolutionProvider' => __DIR__ . '/..' . '/facade/ignition/src/SolutionProviders/ViewNotFoundSolutionProvider.php',
         'Facade\\Ignition\\Solutions\\GenerateAppKeySolution' => __DIR__ . '/..' . '/facade/ignition/src/Solutions/GenerateAppKeySolution.php',
+        'Facade\\Ignition\\Solutions\\LivewireDiscoverSolution' => __DIR__ . '/..' . '/facade/ignition/src/Solutions/LivewireDiscoverSolution.php',
         'Facade\\Ignition\\Solutions\\MakeViewVariableOptionalSolution' => __DIR__ . '/..' . '/facade/ignition/src/Solutions/MakeViewVariableOptionalSolution.php',
         'Facade\\Ignition\\Solutions\\MissingPackageSolution' => __DIR__ . '/..' . '/facade/ignition/src/Solutions/MissingPackageSolution.php',
         'Facade\\Ignition\\Solutions\\RunMigrationsSolution' => __DIR__ . '/..' . '/facade/ignition/src/Solutions/RunMigrationsSolution.php',
@@ -1910,6 +1932,7 @@ class ComposerStaticInitf7d747b2d7e9da17bd94dc46e384858e
         'Illuminate\\Database\\Eloquent\\Relations\\BelongsTo' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Database/Eloquent/Relations/BelongsTo.php',
         'Illuminate\\Database\\Eloquent\\Relations\\BelongsToMany' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Database/Eloquent/Relations/BelongsToMany.php',
         'Illuminate\\Database\\Eloquent\\Relations\\Concerns\\AsPivot' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Database/Eloquent/Relations/Concerns/AsPivot.php',
+        'Illuminate\\Database\\Eloquent\\Relations\\Concerns\\ComparesRelatedModels' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Database/Eloquent/Relations/Concerns/ComparesRelatedModels.php',
         'Illuminate\\Database\\Eloquent\\Relations\\Concerns\\InteractsWithPivotTable' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Database/Eloquent/Relations/Concerns/InteractsWithPivotTable.php',
         'Illuminate\\Database\\Eloquent\\Relations\\Concerns\\SupportsDefaultModels' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Database/Eloquent/Relations/Concerns/SupportsDefaultModels.php',
         'Illuminate\\Database\\Eloquent\\Relations\\HasMany' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Database/Eloquent/Relations/HasMany.php',
@@ -2274,6 +2297,9 @@ class ComposerStaticInitf7d747b2d7e9da17bd94dc46e384858e
         'Illuminate\\Queue\\LuaScripts' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Queue/LuaScripts.php',
         'Illuminate\\Queue\\ManuallyFailedException' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Queue/ManuallyFailedException.php',
         'Illuminate\\Queue\\MaxAttemptsExceededException' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Queue/MaxAttemptsExceededException.php',
+        'Illuminate\\Queue\\Middleware\\RateLimited' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Queue/Middleware/RateLimited.php',
+        'Illuminate\\Queue\\Middleware\\RateLimitedWithRedis' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Queue/Middleware/RateLimitedWithRedis.php',
+        'Illuminate\\Queue\\Middleware\\WithoutOverlapping' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Queue/Middleware/WithoutOverlapping.php',
         'Illuminate\\Queue\\NullQueue' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Queue/NullQueue.php',
         'Illuminate\\Queue\\Queue' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Queue/Queue.php',
         'Illuminate\\Queue\\QueueManager' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Queue/QueueManager.php',
@@ -2429,6 +2455,7 @@ class ComposerStaticInitf7d747b2d7e9da17bd94dc46e384858e
         'Illuminate\\Support\\Testing\\Fakes\\MailFake' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Support/Testing/Fakes/MailFake.php',
         'Illuminate\\Support\\Testing\\Fakes\\NotificationFake' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Support/Testing/Fakes/NotificationFake.php',
         'Illuminate\\Support\\Testing\\Fakes\\PendingBatchFake' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Support/Testing/Fakes/PendingBatchFake.php',
+        'Illuminate\\Support\\Testing\\Fakes\\PendingChainFake' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Support/Testing/Fakes/PendingChainFake.php',
         'Illuminate\\Support\\Testing\\Fakes\\PendingMailFake' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Support/Testing/Fakes/PendingMailFake.php',
         'Illuminate\\Support\\Testing\\Fakes\\QueueFake' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Support/Testing/Fakes/QueueFake.php',
         'Illuminate\\Support\\Traits\\CapsuleManagerTrait' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Support/Traits/CapsuleManagerTrait.php',
@@ -2535,6 +2562,14 @@ class ComposerStaticInitf7d747b2d7e9da17bd94dc46e384858e
         'Laravel\\Ui\\Presets\\Vue' => __DIR__ . '/..' . '/laravel/ui/src/Presets/Vue.php',
         'Laravel\\Ui\\UiCommand' => __DIR__ . '/..' . '/laravel/ui/src/UiCommand.php',
         'Laravel\\Ui\\UiServiceProvider' => __DIR__ . '/..' . '/laravel/ui/src/UiServiceProvider.php',
+        'Laravie\\Parser\\Document' => __DIR__ . '/..' . '/laravie/parser/src/Document.php',
+        'Laravie\\Parser\\FileNotFoundException' => __DIR__ . '/..' . '/laravie/parser/src/FileNotFoundException.php',
+        'Laravie\\Parser\\InvalidContentException' => __DIR__ . '/..' . '/laravie/parser/src/InvalidContentException.php',
+        'Laravie\\Parser\\Reader' => __DIR__ . '/..' . '/laravie/parser/src/Reader.php',
+        'Laravie\\Parser\\Xml\\Concerns\\SupportMultiLevel' => __DIR__ . '/..' . '/laravie/parser/src/Xml/Concerns/SupportMultiLevel.php',
+        'Laravie\\Parser\\Xml\\Definitions\\MultiLevel' => __DIR__ . '/..' . '/laravie/parser/src/Xml/Definitions/MultiLevel.php',
+        'Laravie\\Parser\\Xml\\Document' => __DIR__ . '/..' . '/laravie/parser/src/Xml/Document.php',
+        'Laravie\\Parser\\Xml\\Reader' => __DIR__ . '/..' . '/laravie/parser/src/Xml/Reader.php',
         'League\\CommonMark\\Block\\Element\\AbstractBlock' => __DIR__ . '/..' . '/league/commonmark/src/Block/Element/AbstractBlock.php',
         'League\\CommonMark\\Block\\Element\\AbstractStringContainerBlock' => __DIR__ . '/..' . '/league/commonmark/src/Block/Element/AbstractStringContainerBlock.php',
         'League\\CommonMark\\Block\\Element\\BlockQuote' => __DIR__ . '/..' . '/league/commonmark/src/Block/Element/BlockQuote.php',
@@ -3936,6 +3971,8 @@ class ComposerStaticInitf7d747b2d7e9da17bd94dc46e384858e
         'Psy\\VersionUpdater\\GitHubChecker' => __DIR__ . '/..' . '/psy/psysh/src/VersionUpdater/GitHubChecker.php',
         'Psy\\VersionUpdater\\IntervalChecker' => __DIR__ . '/..' . '/psy/psysh/src/VersionUpdater/IntervalChecker.php',
         'Psy\\VersionUpdater\\NoopChecker' => __DIR__ . '/..' . '/psy/psysh/src/VersionUpdater/NoopChecker.php',
+        'Ralego\\Parser\\ParserServiceProvider' => __DIR__ . '/..' . '/ralego/laravel-xml-parser/src/ParserServiceProvider.php',
+        'Ralego\\Parser\\Traits\\XmlParser' => __DIR__ . '/..' . '/ralego/laravel-xml-parser/src/Traits/XmlParser.php',
         'Ramsey\\Collection\\AbstractArray' => __DIR__ . '/..' . '/ramsey/collection/src/AbstractArray.php',
         'Ramsey\\Collection\\AbstractCollection' => __DIR__ . '/..' . '/ramsey/collection/src/AbstractCollection.php',
         'Ramsey\\Collection\\AbstractSet' => __DIR__ . '/..' . '/ramsey/collection/src/AbstractSet.php',
@@ -5006,6 +5043,17 @@ class ComposerStaticInitf7d747b2d7e9da17bd94dc46e384858e
         'TheSeer\\Tokenizer\\TokenCollectionException' => __DIR__ . '/..' . '/theseer/tokenizer/src/TokenCollectionException.php',
         'TheSeer\\Tokenizer\\Tokenizer' => __DIR__ . '/..' . '/theseer/tokenizer/src/Tokenizer.php',
         'TheSeer\\Tokenizer\\XMLSerializer' => __DIR__ . '/..' . '/theseer/tokenizer/src/XMLSerializer.php',
+        'Tightenco\\Collect\\Contracts\\Support\\Arrayable' => __DIR__ . '/..' . '/tightenco/collect/src/Collect/Contracts/Support/Arrayable.php',
+        'Tightenco\\Collect\\Contracts\\Support\\Htmlable' => __DIR__ . '/..' . '/tightenco/collect/src/Collect/Contracts/Support/Htmlable.php',
+        'Tightenco\\Collect\\Contracts\\Support\\Jsonable' => __DIR__ . '/..' . '/tightenco/collect/src/Collect/Contracts/Support/Jsonable.php',
+        'Tightenco\\Collect\\Support\\Arr' => __DIR__ . '/..' . '/tightenco/collect/src/Collect/Support/Arr.php',
+        'Tightenco\\Collect\\Support\\Collection' => __DIR__ . '/..' . '/tightenco/collect/src/Collect/Support/Collection.php',
+        'Tightenco\\Collect\\Support\\Enumerable' => __DIR__ . '/..' . '/tightenco/collect/src/Collect/Support/Enumerable.php',
+        'Tightenco\\Collect\\Support\\HigherOrderCollectionProxy' => __DIR__ . '/..' . '/tightenco/collect/src/Collect/Support/HigherOrderCollectionProxy.php',
+        'Tightenco\\Collect\\Support\\HigherOrderWhenProxy' => __DIR__ . '/..' . '/tightenco/collect/src/Collect/Support/HigherOrderWhenProxy.php',
+        'Tightenco\\Collect\\Support\\LazyCollection' => __DIR__ . '/..' . '/tightenco/collect/src/Collect/Support/LazyCollection.php',
+        'Tightenco\\Collect\\Support\\Traits\\EnumeratesValues' => __DIR__ . '/..' . '/tightenco/collect/src/Collect/Support/Traits/EnumeratesValues.php',
+        'Tightenco\\Collect\\Support\\Traits\\Macroable' => __DIR__ . '/..' . '/tightenco/collect/src/Collect/Support/Traits/Macroable.php',
         'TijsVerkoyen\\CssToInlineStyles\\CssToInlineStyles' => __DIR__ . '/..' . '/tijsverkoyen/css-to-inline-styles/src/CssToInlineStyles.php',
         'TijsVerkoyen\\CssToInlineStyles\\Css\\Processor' => __DIR__ . '/..' . '/tijsverkoyen/css-to-inline-styles/src/Css/Processor.php',
         'TijsVerkoyen\\CssToInlineStyles\\Css\\Property\\Processor' => __DIR__ . '/..' . '/tijsverkoyen/css-to-inline-styles/src/Css/Property/Processor.php',

@@ -32,15 +32,8 @@ class PeliculaController extends Controller
         public function asignarPelicula(){
 
             $peliculas = Pelicula::all();
-
             
-
             return view('cartelera.asignarPeliculaSala')->with('peliculas',$peliculas);
-      
-      
-      
-      
-      
       
           }
 
@@ -67,9 +60,7 @@ class PeliculaController extends Controller
         ]);
 
 
-            $genero = implode(",",$request->get('genero'));
-
-
+        $genero = implode(",",$request->get('genero'));
 
         $pelicula = new Pelicula([
 
@@ -91,7 +82,37 @@ class PeliculaController extends Controller
     }
 
 
-    
+    public function Estore(Request $request)
+    {
+
+        if(!$xml = simplexml_load_file($_FILES['file']['tmp_name'])){
+            echo "No se ha podido cargar el archivo";
+        } else {
+            foreach ($xml as $pelicula){
+
+                $request->validate([
+                    'file' => ['required','mimes: xml']
+                ]);
+
+                $pelicula = new Pelicula([
+
+                    'titulo' => $pelicula->titulo,
+                    'director' => $pelicula->director,
+                    'duracion' =>  $pelicula->duracion,
+                    'genero' =>  $pelicula->genero,
+                    'reparto' => $pelicula->reparto,
+                    'sinopsis' => $pelicula->sinopsis,
+                    'clasificacion' => $pelicula->clasificacion,
+                    'estado' => $pelicula->estado,
+                    'imagen_promocional' => $pelicula->imagen_promocional,
+                    'trailer' => $pelicula->trailer,
+
+                ]);
+                
+                $pelicula->save();
+            }
+        }
+    }
 
     /**
      * Display the specified resource.
