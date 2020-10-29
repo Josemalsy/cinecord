@@ -22,10 +22,8 @@ class CreatePeliculasTable extends Migration
             $table->text('reparto');
 	        $table->text('sinopsis');
 	        $table->string('clasificacion');
-            $table->string('estado');
-
+            $table->date('fechaEstreno');
             $table->string('tipo_pelicula');
-
             $table->text('imagen_promocional');
             $table->text('trailer');
 

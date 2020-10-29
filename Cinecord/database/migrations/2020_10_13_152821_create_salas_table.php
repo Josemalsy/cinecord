@@ -17,6 +17,8 @@ class CreateSalasTable extends Migration
             $table->id();
             $table->integer('aforo');
             $table->string('tipo_sala');   
+            $table->string('tramoInicial');
+            $table->string('tramoFinal');
             $table->timestamps();
         });
     }

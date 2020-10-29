@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Pelicula;
 use App\Models\Sala;
+use App\Models\pelicula_sala;
 
 
 class PeliculaController extends Controller
@@ -24,6 +25,18 @@ class PeliculaController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+
+    public function extraerSesiones(Request $request){
+
+
+       $sesiones =  pelicula_sala::get()->where('sala_id',"1")->where("fecha",$request->fecha);
+    
+        return $sesiones;
+
+    } 
+
+
     public function create(){
     
         return view('cartelera.subirPeliculaForm');
@@ -33,6 +46,10 @@ class PeliculaController extends Controller
         public function asignarPelicula(){
 
             $peliculas = Pelicula::all();
+            $salas = Sala::all();
+
+
+            return view('cartelera.asignarPeliculaSala')->with('peliculas',$peliculas)->with('salas',$salas);
 
 
             
@@ -90,11 +107,33 @@ class PeliculaController extends Controller
         if(!$xml = simplexml_load_file($_FILES['file']['tmp_name'])){
             echo "No se ha podido cargar el archivo";
         } else {
+
+
+            $totalSalas = 5;
+
+            foreach($xml as $pelicula_sala){
+
+                        $pelicula_sala = new pelicula_sala([
+
+                            'pelicula_id'=>$pelicula_sala->id,
+                            'fecha'=>$pelicula_sala->fechaEstreno,
+                            'sala_id'=>$pelicula_sala->sala,
+                            'hora'=>$pelicula_sala->hora
+                            
+        
+                        ]);
+                       
+
+                        $pelicula_sala->save();
+
+            
+        }
+    }
+
+
             foreach ($xml as $pelicula){
 
-                $request->validate([
-                    'file' => ['required','mimes: xml']
-                ]);
+               
 
                 $pelicula = new Pelicula([
 
@@ -105,16 +144,17 @@ class PeliculaController extends Controller
                     'reparto' => $pelicula->reparto,
                     'sinopsis' => $pelicula->sinopsis,
                     'clasificacion' => $pelicula->clasificacion,
-                    'estado' => $pelicula->estado,
+                    'fechaEstreno' => $pelicula->fechaEstreno,
                     'imagen_promocional' => $pelicula->imagen_promocional,
                     'trailer' => $pelicula->trailer,
+                    'tipo_pelicula'=>$pelicula->tipo_pelicula
 
                 ]);
                 
                 $pelicula->save();
             }
         }
-    }
+    
 
     /**
      * Display the specified resource.
@@ -160,4 +200,6 @@ class PeliculaController extends Controller
     {
         //
     }
+
+
 }

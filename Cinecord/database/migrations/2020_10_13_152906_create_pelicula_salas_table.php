@@ -14,6 +14,7 @@ class CreatePeliculaSalasTable extends Migration
     public function up()
     {
         Schema::create('pelicula_salas', function (Blueprint $table) {
+            $table->integer('id');
             $table->integer('pelicula_id');
 	        $table->integer('sala_id');
             $table->date('fecha');	    
