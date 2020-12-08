@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Pelicula;
 use App\Models\Sala;
 use App\Models\pelicula_sala;
-
+use Illuminate\Support\Facades\Storage;
 
 class PeliculaController extends Controller
 {
@@ -15,9 +15,31 @@ class PeliculaController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        //
+
+
+        $arrayPeliculas = [];
+            $peliculas =  Pelicula::get();
+            foreach ($peliculas as $pelicula) {    
+
+                    array_push($arrayPeliculas,$pelicula);
+
+            }
+    
+
+            $arrayPeliculas = (array) $arrayPeliculas;
+
+            
+        
+
+    return $arrayPeliculas;
+
+
+
+
+    
+
     }
 
     /**
@@ -29,13 +51,28 @@ class PeliculaController extends Controller
 
     public function extraerSesiones(Request $request){
 
+    $arrayOrdenado = [];
+    $sesiones =  pelicula_sala::get()->where('fecha',$request->fechaSeleccionada);
+    foreach ($sesiones as $sesion) {    
 
-       $sesiones =  pelicula_sala::get()->where('sala_id',"1")->where("fecha",$request->fecha);
+            array_push($arrayOrdenado,$sesion);
+
+    }
     
-        return $sesiones;
+
+    
+
+    return $arrayOrdenado;
+        
 
     } 
 
+
+    public function totalPeliculas(){
+        $totalPeliculas =  Pelicula::all();
+
+        return count($totalPeliculas);
+    }
 
     public function create(){
     
@@ -43,19 +80,19 @@ class PeliculaController extends Controller
     
         }
 
-        public function asignarPelicula(){
+    public function asignarPelicula(){
 
             $peliculas = Pelicula::all();
             $salas = Sala::all();
 
-
-            return view('cartelera.asignarPeliculaSala')->with('peliculas',$peliculas)->with('salas',$salas);
+            
+            return view('cartelera.asignarPeliculaSala2')->with('peliculas',$peliculas)->with('salas',$salas);
 
 
             
 
-      
-          }
+    
+    }
 
         /**
      * Store a newly created resource in storage.
@@ -65,22 +102,12 @@ class PeliculaController extends Controller
      */
     public function store(Request $request)
     {
-
-           
-        $request->validate([
-            'titulo' => ['required','max:255'],
-            'director' => ['required','max:255'],
-            'duracion' => ['required','numeric'],
-            'genero' =>  ['required'],
-            'reparto' => 'required',
-            'sinopsis' => 'required',
-            'clasificacion' => 'required',
-            'estado' => 'required'
-        ]);
+        
+        
 
 
-        $genero = implode(",",$request->get('genero'));
-
+        $genero = implode(",",$request->get('genero'));    
+    
         $pelicula = new Pelicula([
 
             'titulo' => $request->get('titulo'),
@@ -90,13 +117,22 @@ class PeliculaController extends Controller
             'reparto' => $request->get('reparto'),
             'sinopsis' => $request->get('sinopsis'),
             'clasificacion' => $request->get('clasificacion'),
-            'estado' => $request->get('estado')
+            'fechaEstreno' => $request->get('fechaEstreno'),
+            'tipo_pelicula' => $request->get('tipo_pelicula'),
+            'imagen_promocional' => $request->get('imagen_promocional'),
+            'trailer' => $request->get('trailer'),
+            
 
         ]);
+            $pelicula->save();
 
-        $pelicula->save();
+            return $pelicula;
 
-        return redirect('/');
+
+
+    
+    
+        
 
     }
 
@@ -122,7 +158,7 @@ class PeliculaController extends Controller
                             
         
                         ]);
-                       
+                    
 
                         $pelicula_sala->save();
 
@@ -133,7 +169,7 @@ class PeliculaController extends Controller
 
             foreach ($xml as $pelicula){
 
-               
+            
 
                 $pelicula = new Pelicula([
 
@@ -187,7 +223,21 @@ class PeliculaController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $pelicula = Pelicula::find($id);
+        $pelicula->imagen_promocional = $request->imagen_promocional;
+        $pelicula->titulo = $request->titulo;
+        $pelicula->director = $request->director;
+        $pelicula->duracion = $request->duracion;
+        $pelicula->genero = $request->genero;
+        $pelicula->reparto = $request->reparto;
+        $pelicula->sinopsis = $request->sinopsis;
+        $pelicula->clasificacion = $request->clasificacion;
+        $pelicula->fechaEstreno = $request->fechaEstreno;
+        $pelicula->tipo_pelicula = $request->tipo_pelicula;
+        $pelicula->trailer = $request->trailer;
+
+        $pelicula->save();
+        return $pelicula;
     }
 
     /**
@@ -198,7 +248,31 @@ class PeliculaController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $pelicula = Pelicula::find($id);
+        $pelicula->delete();
+    }
+
+    public function cargarPeliculas(){
+
+        $peliculas = Pelicula::all();
+        
+
+        return $peliculas;
+
+    }
+
+    public function cargarSalas(){
+
+        $salas = Sala::all();
+    
+        return $salas;
+    }
+    public function guardarSesiones(Request $request)
+    {
+
+        
+        dd($request);
+
     }
 
 

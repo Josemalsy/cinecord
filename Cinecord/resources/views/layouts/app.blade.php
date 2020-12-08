@@ -21,32 +21,11 @@
 </head>
 <body>
     <div id="app">
-        
-       
-        <nav class="navbar navbar-expand-md navbar-dark bg-dark shadow-sm">
+        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
-                 {{-- Menu --}}
-                 <a href="" class=" ml-5">INICIO</a>
-                 <a href="" class="ml-5">TARJETA</a>
-                 <a href="" class="ml-5">PARA COMER</a>
-                 <a href="" class="ml-5">SOBRE NOSOTROS</a>
-                
-
-                 
-
-
-                  
-                 {{-- @if (Auth::user()!=null && auth()->user()->hasRoles(['admin','moderador']))   --}}
-                        
-                {{-- <a href="{{route('usuariosIndex')}}" class="{{ activeMneu('usuarios') }} ml-5">Usuarios</a> --}}
-                
-               
-
-                
-                {{-- @endif  --}}
-                
-                
-            </a>
+                <a class="navbar-brand" href="{{ url('/') }}">
+                    {{ config('app.name', 'Laravel') }}
+                </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -95,9 +74,7 @@
 
         <main class="py-4">
             @yield('content')
-           
         </main>
     </div>
-    
 </body>
 </html>

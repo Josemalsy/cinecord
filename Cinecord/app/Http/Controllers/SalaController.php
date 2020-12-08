@@ -15,25 +15,20 @@ class SalaController extends Controller
      */
     public function index()
     {
-        // $sala = Sala::get()->where('id',1)->first();
-
-        // $columnas_Filas = $sala->aforo/2;
-
-        // $filas = $sala->aforo/2;
-        // $columnas = $sala->aforo/2;
-
-
-        // $pasillo = 3;
-
+        $salas =  Sala::all();
         
-        
-        
+        return $salas;
+    }
 
-        
+    public function totalSalas(){
+        $totalSalas =  Sala::all();
 
-       
+        return count($totalSalas);
+    }
 
-        //  return view('sala.verSala')->with('salas',$sala)->with('pasillo',$pasillo)->with('filas',$filas)->with('columnas',$columnas);
+
+    public function subirSala(){
+        return view('cartelera.subirSalaForm');
     }
 
     /**
@@ -43,7 +38,8 @@ class SalaController extends Controller
      */
     public function create()
     {
-        return view('sala.crearSala');
+        
+        
     }
 
     /**
@@ -54,27 +50,27 @@ class SalaController extends Controller
      */
     public function store(Request $request)
     {
-      
-       $request->validate([
-        'aforo' => ['required','numeric'],
-        'tipoSala' => ['required'],
+    
         
-    ]);
-
+    
         $sala = new Sala([
 
-            'aforo'=> $request->get('aforo'),
-            'tipo_sala'=>$request->get('tipoSala')
-
-
-
+            'aforo' => $request->get('aforo'),
+            'tipo_sala' => $request->get('tipo_sala'),
+            'tramoInicial' => $request->get('tramoInicial'),
+            'tramoFinal' =>  $request->get('tramoFinal'),
+            
+            
 
         ]);
+            $sala->save();
 
-        $sala->save();
-        return redirect('/');
+            return $sala;
 
 
+
+    
+    
 
     }
 
@@ -109,7 +105,13 @@ class SalaController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $sala = Sala::find($id);
+        $sala->aforo = $request->aforo;
+        $sala->tipo_sala = $request->tipo_sala;
+        $sala->tramoInicial = $request->tramoInicial;
+        $sala->tramoFinal = $request->tramoFinal;
+        $sala->save();
+        return $sala;
     }
 
     /**
@@ -120,6 +122,7 @@ class SalaController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $sala = Sala::find($id);
+        $sala->delete();
     }
 }

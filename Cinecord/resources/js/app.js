@@ -1,32 +1,36 @@
-/**
- * First we will load all of this project's JavaScript dependencies which
- * includes Vue and other libraries. It is a great starting point when
- * building robust, powerful web applications using Vue and Laravel.
- */
+
 
 require('./bootstrap');
 
+
 window.Vue = require('vue');
 
-/**
- * The following block of code may be used to automatically register your
- * Vue components. It will recursively scan this directory for the Vue
- * components and automatically register them with their "basename".
- *
- * Eg. ./components/ExampleComponent.vue -> <example-component></example-component>
- */
+Vue.component('asignar', require('./components/AsignarComponent.vue').default);
 
-// const files = require.context('./', true, /\.vue$/i)
-// files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
-Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 
-/**
- * Next, we will create a fresh Vue application instance and attach it to
- * the page. Then, you may begin adding components to this application
- * or customize the JavaScript scaffolding to fit your unique needs.
- */
+
+// Componentes Globales
+Vue.component('sidebar-admin', require('./components/panel-component/Sidebar.vue').default);
+Vue.component('navegacion-cluster', require('./components/NavegacionCluster.vue').default);
+Vue.component('tablero-admin',require('./components/panel-component/Tablero-admin.vue').default);
+
+// Crud Películas
+Vue.component('subir-pelicula', require('./components/crud-peliculas/SubirPelicula.vue').default);
+Vue.component('listar-peliculas', require('./components/crud-peliculas/ListarPeliculas.vue').default);
+Vue.component('formulario-editar', require('./components/crud-peliculas/FormularioEditar.vue').default);
+Vue.component('formulario-insertar', require('./components/crud-peliculas/FormularioInsertar.vue').default);
+
+// Crud Salas
+Vue.component('subir-sala', require('./components/crud-salas/SubirSala.vue').default);
+Vue.component('formulario-insertar-sala', require('./components/crud-salas/FormularioInsertar.vue').default);
+Vue.component('formulario-editar-sala', require('./components/crud-salas/FormularioEditar.vue').default);
+Vue.component('listar-salas', require('./components/crud-salas/ListarSalas.vue').default);
+
 
 const app = new Vue({
     el: '#app',
+    
 });
+
+
