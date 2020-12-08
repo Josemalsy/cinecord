@@ -7,7 +7,7 @@
 
 
         <div class="card border-success mb-3">
-            <a class="text-dark" href="{{route('peliculas.create')}}">
+            <a class="text-dark" href="#">
                 <div class="card-body">
                     <h5 class="card-title">Subida manual de peliculas</h5>
                     <p class="card-text">Sube las peliculas rellenando un formulario </p>

@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
+
 class User extends Authenticatable 
 {
     use HasFactory, Notifiable;
@@ -47,5 +48,10 @@ class User extends Authenticatable
         public function tarjeta()
     {
         return $this->hasOne('App\Models\Phone');
+    }
+
+    public function critica()
+    {
+        return $this->hasMany('App\Models\critica');
     }
 }

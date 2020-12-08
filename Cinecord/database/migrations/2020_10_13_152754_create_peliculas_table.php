@@ -28,6 +28,7 @@ class CreatePeliculasTable extends Migration
             $table->text('trailer');
 
             $table->timestamps();
+            
         });
     }
 

@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PeliculaController;
 use App\Http\Controllers\SalaController;
+use App\Http\Controllers\CriticaController;
 
 
 
@@ -16,10 +17,6 @@ use App\Http\Controllers\SalaController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/', function () {
-    return view('welcome');
-});
 
 Auth::routes();
 
@@ -43,15 +40,23 @@ Route::group(['middleware' => 'ControlAcceso'], function(){
         return view("cartelera.subidaXML");
     })->name('fileXML');
 
-    Route::resource('staff/cartelera', PeliculaController::class)->names('peliculas');
+    // Route::resource('staff/cartelera', PeliculaController::class)->names('peliculas');
     Route::resource('staff/sala', SalaController::class)->names('salas');
 
     
 
 
-    Route::post('/staff/cartelera/subida_masiva',[PeliculaController::class,'Estore'])->name('salvar');
-
-    
+    Route::post('/staff/cartelera/subida_masiva',[PeliculaController::class,'subirPeliculasXML'])->name('salvar');
 
 
 });
+Route::get('/', function () {
+    return view('portada');
+});
+
+
+Route::resource('/peliculasPortada',PeliculaController::class)->only(['index']);
+
+Route::resource('/critica', CriticaController::class)->except(['show']);
+Route::get('/critica/mediavaloracion/{id}',[CriticaController::class,'mediaValoracion'])->name('criticas.mediaValoracion');
+

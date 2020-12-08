@@ -17,7 +17,8 @@ class PeliculaController extends Controller
      */
     public function index()
     {
-        //
+        $peliculas = Pelicula::get();
+        return $peliculas;
     }
 
     /**
@@ -52,9 +53,7 @@ class PeliculaController extends Controller
             return view('cartelera.asignarPeliculaSala')->with('peliculas',$peliculas)->with('salas',$salas);
 
 
-            
-
-      
+        
           }
 
         /**
@@ -130,32 +129,51 @@ class PeliculaController extends Controller
         }
     }
 
+}
+           public function subirPeliculasXML(){
+            if(!$xml = simplexml_load_file($_FILES['file']['tmp_name'])){
+                echo "No se ha podido cargar el archivo";
+            } else {
+    
+    
+                /*       $pelicula = new Pelicula([
+    
+                        'titulo' => $pelicula->titulo,
+                        'director' => $pelicula->director,
+                        'duracion' =>  $pelicula->duracion,
+                        'genero' =>  $pelicula->genero,
+                        'reparto' => $pelicula->reparto,
+                        'sinopsis' => $pelicula->sinopsis,
+                        'clasificacion' => $pelicula->clasificacion,
+                        'estado' => $pelicula->estado,
+                        'imagen_promocional' => $pelicula->imagen_promocional,
+                        'trailer' => $pelicula->trailer,
+                        'tipo_pelicula'=>$pelicula->tipo_pelicula */
 
-            foreach ($xml as $pelicula){
-
-               
-
-                $pelicula = new Pelicula([
-
-                    'titulo' => $pelicula->titulo,
-                    'director' => $pelicula->director,
-                    'duracion' =>  $pelicula->duracion,
-                    'genero' =>  $pelicula->genero,
-                    'reparto' => $pelicula->reparto,
-                    'sinopsis' => $pelicula->sinopsis,
-                    'clasificacion' => $pelicula->clasificacion,
-                    'fechaEstreno' => $pelicula->fechaEstreno,
-                    'imagen_promocional' => $pelicula->imagen_promocional,
-                    'trailer' => $pelicula->trailer,
-                    'tipo_pelicula'=>$pelicula->tipo_pelicula
-
-                ]);
-                
-                $pelicula->save();
+    
+                foreach($xml as $pelicula){              
+    
+                    $pelicula = new Pelicula([
+    
+                        'titulo' => $pelicula->titulo,
+                        'director' => $pelicula->director,
+                        'duracion' =>  100,
+                        'genero' =>  $pelicula->generos,
+                        'reparto' => 'no data',
+                        'sinopsis' => $pelicula->sinopsis,
+                        'clasificacion' => 'no data',
+                        'estado' => 'no data',
+                        'imagen_promocional' => $pelicula->imagen,
+                        'trailer' => 'no data',
+                        'tipo_pelicula'=>'no data',
+    
+                    ]);
+                    
+                    $pelicula->save();
+                }
+                return redirect('/');
             }
         }
-    
-
     /**
      * Display the specified resource.
      *
