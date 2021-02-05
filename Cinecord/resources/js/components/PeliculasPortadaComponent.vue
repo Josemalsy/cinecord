@@ -12,7 +12,7 @@
           <img class="img-fluid." :src="pelicula.imagen_promocional">
         </div>
             <p>{{pelicula.titulo}}</p>
-            <small>{{pelicula.duracion}} minutos</small>
+            <small>{{pelicula.duracion}} largos minutos<small>
                  
         </div>  
 
